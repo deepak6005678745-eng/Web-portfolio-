@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepak Kumar | Portfolio</title>
+    <!-- Tailwind CSS Script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- SweetAlert Library for Premium Pop-up -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body class="bg-[#0b0c16] text-white font-sans antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- 1. HERO SECTION -->
+    <section class="max-w-7xl mx-auto px-6 pt-20 pb-12 flex flex-col lg:flex-row items-center justify-between gap-12">
+        
+        <!-- Left Content -->
+        <div class="flex-1 space-y-6 text-center lg:text-left">
+            <!-- Top Badge -->
+            <div class="inline-block">
+                <span class="text-xs font-semibold tracking-wider text-purple-400 uppercase bg-purple-950/40 border border-purple-800/60 px-4 py-2 rounded-full">
+                    Freelance Software Developer
+                </span>
+            </div>
+            
+            <!-- Main Title -->
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                I Build Digital <br class="hidden md:inline">Solutions That Drive <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-400">Real Impact.</span>
+            </h1>
+            
+            <!-- Description -->
+            <p class="text-gray-400 text-base md:text-lg max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                I am a passionate software developer focused on building high-performance, scalable and user-centric digital products.
+            </p>
+            
+            <!-- Call to Actions -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-7 py-3.5 rounded-xl transition duration-300 flex items-center gap-2 shadow-lg shadow-indigo-600/30">
+                    <i class="fas fa-rocket text-sm"></i> Hire Me
+                </a>
+                <a href="#contact" class="bg-[#131526] hover:bg-[#1b1e36] text-gray-300 border border-gray-800/80 font-medium px-7 py-3.5 rounded-xl transition duration-300 flex items-center gap-2">
+                    <i class="fas fa-phone-alt text-sm"></i> Get in Touch
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Content (Laptop Mockup) -->
+        <div class="flex-1 w-full max-w-2xl relative group">
+            <div class="absolute -inset-4 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full blur-3xl opacity-10 group-hover:opacity-15 transition duration-500"></div>
+            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1000&q=80" alt="Laptop Preview" class="relative w-full h-auto rounded-xl shadow-2xl border border-gray-800/50 drop-shadow-[0_20px_50px_rgba(79,70,229,0.15)]">
+        </div>
+
+    </section>
+
+    <!-- 2. CORE FEATURES SECTION -->
+    <section class="max-w-7xl mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 bg-[#0f1122]/80 border border-gray-900 p-8 rounded-2xl backdrop-blur-md shadow-xl">
+            
+            <!-- Feature 1 -->
+            <div class="space-y-3">
+                <div class="w-11 h-11 bg-[#161933] border border-gray-800 rounded-xl flex items-center justify-center text-indigo-400 shadow-inner">
+                    <i class="fas fa-code text-lg"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-100">Modern Solutions</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">I use the latest technologies to build future-ready products.</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="space-y-3">
+                <div class="w-11 h-11 bg-[#161933] border border-gray-800 rounded-xl flex items-center justify-center text-purple-400 shadow-inner">
+                    <i class="fas fa-bolt text-lg"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-100">High Performance</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">Optimized, scalable and high-performance applications.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="space-y-3">
+                <div class="w-11 h-11 bg-[#161933] border border-gray-800 rounded-xl flex items-center justify-center text-emerald-400 shadow-inner">
+                    <i class="fas fa-shield-alt text-lg"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-100">Secure & Reliable</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">Security and reliability are at the core of my process.</p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="space-y-3">
+                <div class="w-11 h-11 bg-[#161933] border border-gray-800 rounded-xl flex items-center justify-center text-blue-400 shadow-inner">
+                    <i class="fas fa-user-friends text-lg"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-100">Client Focused</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">I collaborate closely to turn ideas into reality.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3. FEATURED PROJECTS SECTION -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="text-center space-y-3 mb-16">
+            <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase">My Work</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Featured Projects</h2>
+            <p class="text-gray-400 max-w-xl mx-auto text-sm leading-relaxed">
+                A selection of projects that showcase my passion for clean code, great design and powerful solutions.
+            </p>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Card 1: Analytics Dashboard -->
+            <div class="group bg-[#0f1122] border border-gray-900 rounded-2xl p-4 hover:border-indigo-500/40 hover:shadow-lg hover:shadow-indigo-500/5 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="overflow-hidden rounded-xl bg-[#161933] mb-4 aspect-[4/3] flex items-center justify-center border border-gray-800/40">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Analytics Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="space-y-2 px-1">
+                        <span class="text-[10px] font-bold tracking-wider text-indigo-400 uppercase bg-indigo-950/40 border border-indigo-900/50 px-2 py-1 rounded">Web Application</span>
+                        <div class="flex items-center justify-between pt-1">
+                            <h3 class="text-lg font-bold text-gray-100 group-hover:text-indigo-400 transition duration-300">Analytics Dashboard</h3>
+                            <i class="fas fa-arrow-up-right-from-square text-xs text-gray-500 group-hover:text-white transition duration-300"></i>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed">A powerful analytics dashboard for real-time business insights.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: TaskFlow Pro -->
+            <div class="group bg-[#0f1122] border border-gray-900 rounded-2xl p-4 hover:border-purple-500/40 hover:shadow-lg hover:shadow-purple-500/5 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="overflow-hidden rounded-xl bg-[#161933] mb-4 aspect-[4/3] flex items-center justify-center border border-gray-800/40">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="TaskFlow Pro" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="space-y-2 px-1">
+                        <span class="text-[10px] font-bold tracking-wider text-purple-400 uppercase bg-purple-950/40 border border-purple-900/50 px-2 py-1 rounded">SaaS Platform</span>
+                        <div class="flex items-center justify-between pt-1">
+                            <h3 class="text-lg font-bold text-gray-100 group-hover:text-purple-400 transition duration-300">TaskFlow Pro</h3>
+                            <i class="fas fa-arrow-up-right-from-square text-xs text-gray-500 group-hover:text-white transition duration-300"></i>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed">Project management SaaS platform to streamline team productivity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: ShopEase -->
+            <div class="group bg-[#0f1122] border border-gray-900 rounded-2xl p-4 hover:border-sky-500/40 hover:shadow-lg hover:shadow-sky-500/5 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="overflow-hidden rounded-xl bg-[#161933] mb-4 aspect-[4/3] flex items-center justify-center border border-gray-800/40">
+                        <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=600&q=80" alt="ShopEase" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="space-y-2 px-1">
+                        <span class="text-[10px] font-bold tracking-wider text-sky-400 uppercase bg-sky-950/40 border border-sky-900/50 px-2 py-1 rounded">Mobile App</span>
+                        <div class="flex items-center justify-between pt-1">
+                            <h3 class="text-lg font-bold text-gray-100 group-hover:text-sky-400 transition duration-300">ShopEase</h3>
+                            <i class="fas fa-arrow-up-right-from-square text-xs text-gray-500 group-hover:text-white transition duration-300"></i>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed">E-commerce mobile app with smooth experience and secure payments.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: RealEstate Hub -->
+            <div class="group bg-[#0f1122] border border-gray-900 rounded-2xl p-4 hover:border-amber-500/40 hover:shadow-lg hover:shadow-amber-500/5 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="overflow-hidden rounded-xl bg-[#161933] mb-4 aspect-[4/3] flex items-center justify-center border border-gray-800/40">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="RealEstate Hub" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="space-y-2 px-1">
+                        <span class="text-[10px] font-bold tracking-wider text-amber-400 uppercase bg-amber-950/40 border border-amber-900/50 px-2 py-1 rounded">Website</span>
+                        <div class="flex items-center justify-between pt-1">
+                            <h3 class="text-lg font-bold text-gray-100 group-hover:text-amber-400 transition duration-300">RealEstate Hub</h3>
+                            <i class="fas fa-arrow-up-right-from-square text-xs text-gray-500 group-hover:text-white transition duration-300"></i>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed">Modern real estate platform to browse, explore and connect.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Finance Manager -->
+            <div class="group bg-[#0f1122] border border-gray-900 rounded-2xl p-4 hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/5 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="overflow-hidden rounded-xl bg-[#161933] mb-4 aspect-[4/3] flex items-center justify-center border border-gray-800/40">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Finance Manager" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="space-y-2 px-1">
+                        <span class="text-[10px] font-bold tracking-wider text-emerald-400 uppercase bg-emerald-950/40 border border-emerald-900/50 px-2 py-1 rounded">Web Application</span>
+                        <div class="flex items-center justify-between pt-1">
+                            <h3 class="text-lg font-bold text-gray-100 group-hover:text-emerald-400 transition duration-300">Finance Manager</h3>
+                            <i class="fas fa-arrow-up-right-from-square text-xs text-gray-500 group-hover:text-white transition duration-300"></i>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed">Personal finance management app to track expenses and savings.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: Foodie House -->
+            <div class="group bg-[#0f1122] border border-gray-900 rounded-2xl p-4 hover:border-rose-500/40 hover:shadow-lg hover:shadow-rose-500/5 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="overflow-hidden rounded-xl bg-[#161933] mb-4 aspect-[4/3] flex items-center justify-center border border-gray-800/40">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Foodie House" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="space-y-2 px-1">
+                        <span class="text-[10px] font-bold tracking-wider text-rose-400 uppercase bg-rose-950/40 border border-rose-900/50 px-2 py-1 rounded">Website</span>
+                        <div class="flex items-center justify-between pt-1">
+                            <h3 class="text-lg font-bold text-gray-100 group-hover:text-rose-400 transition duration-300">Foodie House</h3>
+                            <i class="fas fa-arrow-up-right-from-square text-xs text-gray-500 group-hover:text-white transition duration-300"></i>
+                        </div>
+                        <p class="text-sm text-gray-400 leading-relaxed">Beautiful restaurant website to attract more customers online.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. CONTACT SECTION (With JavaScript Alert Integration) -->
+    <section id="contact" class="max-w-3xl mx-auto px-6 py-16 mb-20 bg-[#0f1122] border border-gray-900 rounded-2xl shadow-xl">
+        <div class="text-center space-y-2 mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold">Let's Work Together</h2>
+            <p class="text-sm text-gray-400">Have a project in mind? Drop me a message and let's build something epic.</p>
+        </div>
+        
+        <!-- Added an id="contact-form" here to target in JS -->
+        <form id="contact-form" action="https://formspree.io/f/xeedndro" method="POST" class="space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input type="text" name="name" required placeholder="Your Name" class="w-full bg-[#161933] border border-gray-800 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-indigo-500 transition">
+                <input type="email" name="email" required placeholder="Your Email" class="w-full bg-[#161933] border border-gray-800 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-indigo-500 transition">
+            </div>
+            <input type="text" name="subject" required placeholder="Subject" class="w-full bg-[#161933] border border-gray-800 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-indigo-500 transition">
+            <textarea rows="4" name="message" required placeholder="Tell me about your project..." class="w-full bg-[#161933] border border-gray-800 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-indigo-500 transition resize-none"></textarea>
+            
+            <button type="submit" id="submit-btn" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-xl transition duration-300 shadow-lg shadow-indigo-600/20">
+                Send Message
+            </button>
+        </form>
+    </section>
+
+    <!-- JS Logic to handle Form Submission via AJAX & show SweetAlert -->
+    <script>
+        const form = document.getElementById('contact-form');
+        const button = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Formspree ke white page par jaane se rokega
+            
+            button.innerText = "Sending...";
+            button.disabled = true;
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // SweetAlert Pop-up animation aur green tick ke saath 🌟
+                    swal({
+                        title: "Thank You!",
+                        text: "Aapka message kewa software solution tak pahunch gaya hai. Main jald hi contact karunga! 👍",
+                        icon: "success",
+                        button: "Awesome!",
+                    });
+                    form.reset(); // Form fields ko clear kar dega
+                } else {
+                    swal("Oops!", "Kuch ghalat ho gaya, dobara try karein.", "error");
+                }
+            })
+            .catch(error => {
+                swal("Oops!", "Internet error! Dobara check karein.", "error");
+            })
+            .finally(() => {
+                button.innerText = "Send Message";
+                button.disabled = false;
+            });
+        });
+    </script>
+
+</body>
+</html>
