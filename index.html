@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepak Kewat | Portfolio</title>
+
+  <!-- CSS FILE LINK -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- INTERFACE 1: WELCOME SCREEN -->
+  <div id="welcome-screen" class="screen">
+    <div class="rocket-icon">🚀</div>
+    <h1>Welcome to <span>Deepak Kewat Portfolio</span></h1>
+    <p>Building high-impact digital solutions, custom web applications, and smart software integrations.</p>
+    <button onclick="goToLobby()">Explore This Website &rarr;</button>
+  </div>
+
+  <!-- INTERFACE 2: MAIN LOBBY SCREEN (Initially Hidden) -->
+  <div id="lobby-screen" class="screen hidden">
+    
+    <!-- Hero Banner Section -->
+    <div class="hero-banner">
+      <h2>Kewa <span>SOFTWARE SOLUTIONS</span></h2>
+      <p>WE BUILD • YOU GROW • TOGETHER</p>
+    </div>
+
+    <!-- Category Cards Grid -->
+    <div class="cards-container">
+      
+      <!-- Card 1: Tech Solutions -->
+      <div class="card tech">
+        <h3>TECH SOLUTIONS</h3>
+        <p>Modern software, web & mobile solutions for a digital tomorrow.</p>
+        <button onclick="openProjectModal('tech')">EXPLORE PROJECTS &rarr;</button>
+      </div>
+
+      <!-- Card 2: Finance Solutions -->
+      <div class="card finance">
+        <h3>FINANCE SOLUTIONS</h3>
+        <p>Smart financial tools and strategies for secure growth.</p>
+        <button onclick="openProjectModal('finance')">EXPLORE PROJECTS &rarr;</button>
+      </div>
+
+      <!-- Card 3: Business Solutions -->
+      <div class="card business">
+        <h3>BUSINESS SOLUTIONS</h3>
+        <p>Empowering businesses with custom digital solutions and workflow automation.</p>
+        <button onclick="openProjectModal('business')">EXPLORE PROJECTS &rarr;</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- INTERFACE 3: DETAIL POPUP MODAL -->
+  <div id="detail-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <img id="modal-img" src="" alt="Project Preview">
+      <h2 id="modal-title"></h2>
+      <p id="modal-desc"></p>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT FILE LINK -->
+  <script src="script.js"></script>
+</body>
+</html>
