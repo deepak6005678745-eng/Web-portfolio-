@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KEWA - Software Development Portfolio</title>
+
+  <!-- Google Analytics Tracking Code -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-041DKR8ZMY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-041DKR8ZMY');
+  </script>
+
+  <style>
+    /* --- RESET & GLOBAL STYLES --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    }
+    body {
+      background-color: #060913;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .hidden { display: none !important; }
+
+    /* --- TOP NAVBAR --- */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      background: rgba(6, 9, 19, 0.85);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+    .logo-icon { color: #a855f7; font-size: 1.4rem; }
+    .logo-sub { font-size: 0.65rem; color: #94a3b8; display: block; font-weight: 500; margin-top: -2px; }
+    
+    .status-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(52, 211, 153, 0.1);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+      color: #34d399;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: #34d399;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #34d399;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    nav { display: flex; gap: 24px; align-items: center; }
+    nav a { color: #cbd5e1; text-decoration: none; font-size: 0.88rem; transition: color 0.3s; }
+    nav a:hover { color: #a855f7; }
+    .btn-hire {
+      background: linear-gradient(90deg, #6366f1, #a855f7);
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px 20px;
+      background: radial-gradient(circle at top, #1e1b4b 0%, #060913 70%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .hero-greeting { color: #c084fc; font-size: 0.95rem; margin-bottom: 12px; font-weight: 600; }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      max-width: 800px;
+      margin: 0 auto 16px auto;
+      line-height: 1.2;
+    }
+    .hero h1 span {
+      background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p { color: #94a3b8; max-width: 600px; margin: 0 auto 28px auto; font-size: 0.95rem; line-height: 1.6; }
+
+    /* STATS BAR */
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .stat-item h3 { font-size: 1.5rem; color: #38bdf8; font-weight: 700; }
+    .stat-item p { font-size: 0.75rem; color: #64748b; margin: 0; }
+
+    /* --- DASHBOARD CONTAINER --- */
+    .dashboard-container {
+      display: flex;
+      gap: 24px;
+      padding: 30px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* SIDEBAR FILTER */
+    .sidebar {
+      width: 220px;
+      flex-shrink: 0;
+      background: rgba(13, 17, 29, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      height: max-content;
+    }
+    .filter-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      color: #94a3b8;
+      background: transparent;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+      transition: all 0.3s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: rgba(99, 102, 241, 0.15);
+      color: #a855f7;
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+
+    /* CARDS GRID */
+    .main-content { flex: 1; }
+    .section-title { font-size: 1.4rem; margin-bottom: 6px; font-weight: 700; }
+    .section-desc { color: #64748b; font-size: 0.85rem; margin-bottom: 24px; }
+    
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: #0b0f19;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(168, 85, 247, 0.4);
+      box-shadow: 0 8px 25px rgba(168, 85, 247, 0.15);
+    }
+    .card-icon {
+      width: 42px; height: 42px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; margin-bottom: 16px;
+    }
+    .icon-purple { background: rgba(168, 85, 247, 0.2); color: #c084fc; }
+    .icon-green { background: rgba(52, 211, 153, 0.2); color: #34d399; }
+    .icon-orange { background: rgba(251, 146, 60, 0.2); color: #fb923c; }
+
+    .card-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
+    .card-text { color: #94a3b8; font-size: 0.82rem; line-height: 1.5; margin-bottom: 20px; }
+    
+    .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .tag { background: rgba(255, 255, 255, 0.05); color: #cbd5e1; padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; }
+
+    .btn-details {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #cbd5e1;
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      width: max-content;
+      transition: all 0.3s;
+    }
+    .btn-details:hover { border-color: #a855f7; color: #a855f7; background: rgba(168, 85, 247, 0.1); }
+
+    /* --- INTERACTIVE TERMINAL SECTION --- */
+    .terminal-section {
+      max-width: 1320px;
+      margin: 10px auto 40px auto;
+      padding: 0 40px;
+      width: 100%;
+    }
+    .terminal-window {
+      background: #090d16;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .terminal-header {
+      background: #0f172a;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .term-btn { width: 10px; height: 10px; border-radius: 50%; }
+    .t-red { background: #ef4444; } .t-yellow { background: #eab308; } .t-green { background: #22c55e; }
+    .terminal-title { color: #64748b; font-size: 0.75rem; margin-left: 10px; font-family: monospace; }
+    
+    .terminal-body {
+      padding: 16px;
+      font-family: 'Consolas', monospace;
+      font-size: 0.85rem;
+      color: #38bdf8;
+      min-height: 140px;
+    }
+    .terminal-output { color: #cbd5e1; margin-bottom: 8px; white-space: pre-line; }
+    .terminal-input-row { display: flex; align-items: center; gap: 8px; }
+    .terminal-prompt { color: #a855f7; font-weight: bold; }
+    .terminal-input {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-family: monospace;
+      font-size: 0.85rem;
+      width: 100%;
+      outline: none;
+    }
+
+    /* --- POPUP MODAL --- */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 7, 15, 0.88);
+      backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 1000;
+    }
+    .modal-card {
+      background: #0b0f19;
+      border: 1px solid rgba(168, 85, 247, 0.4);
+      border-radius: 20px;
+      padding: 24px;
+      max-width: 500px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 0 40px rgba(168, 85, 247, 0.25);
+    }
+    .modal-close {
+      position: absolute;
+      top: 14px; right: 18px;
+      font-size: 1.2rem; color: #94a3b8; cursor: pointer;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%; width: 32px; height: 32px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .modal-img-wrapper {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .modal-img-wrapper img { width: 100%; height: 210px; object-fit: cover; display: block; }
+    .modal-badge {
+      position: absolute; bottom: 12px; left: 12px;
+      background: rgba(168, 85, 247, 0.9); color: #fff;
+      padding: 4px 10px; border-radius: 6px; font-size: 0.75rem;
+    }
+    .modal-h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; color: #ffffff; }
+    .modal-p { color: #94a3b8; font-size: 0.85rem; line-height: 1.6; margin-bottom: 20px; }
+    
+    .modal-action-btns { display: flex; gap: 12px; }
+    .btn-modal-demo {
+      flex: 1;
+      background: linear-gradient(90deg, #6366f1, #a855f7);
+      color: #fff; text-decoration: none; text-align: center;
+      padding: 10px; border-radius: 8px; font-weight: 600; font-size: 0.85rem;
+    }
+    .btn-modal-code {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.15);
+      color: #cbd5e1; text-decoration: none; text-align: center;
+      padding: 10px; border-radius: 8px; font-weight: 600; font-size: 0.85rem;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 850px) {
+      header { padding: 16px 20px; }
+      .dashboard-container { flex-direction: column; padding: 20px; }
+      .sidebar { width: 100%; flex-direction: row; overflow-x: auto; }
+      .terminal-section { padding: 0 20px; }
+      .hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <span class="logo-icon">&lt;/&gt;</span>
+      <div>
+        KEWA
+        <span class="logo-sub">SOFTWARE DEVELOPMENT</span>
+      </div>
+    </div>
+    
+    <div class="status-badge">
+      <div class="pulse-dot"></div> Available for Hire
+    </div>
+
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#terminal">Terminal</a>
+      <a href="#" class="btn-hire">Hire Me</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-greeting">Hi, I'm Deepak 👋</div>
+    <h1>I Build Digital Solutions That Drive <span>Real Impact</span></h1>
+    <p>Crafting intelligent, scalable, and high-performance digital products for startups, businesses, and brands.</p>
+    
+    <div class="hero-stats">
+      <div class="stat-item"><h3>15+</h3><p>Projects Built</p></div>
+      <div class="stat-item"><h3>99.9%</h3><p>Uptime Rate</p></div>
+      <div class="stat-item"><h3>100%</h3><p>Client Satisfaction</p></div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD CONTAINER -->
+  <div class="dashboard-container" id="projects">
+    <!-- LEFT SIDEBAR FILTER -->
+    <aside class="sidebar">
+      <button class="filter-btn active" onclick="filterProjects('all', this)">💼 All Projects</button>
+      <button class="filter-btn" onclick="filterProjects('web', this)">🌐 Web Apps</button>
+      <button class="filter-btn" onclick="filterProjects('mobile', this)">📱 Mobile Apps</button>
+      <button class="filter-btn" onclick="filterProjects('ai', this)">🤖 AI & Systems</button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <h2 class="section-title">Featured Work</h2>
+      <p class="section-desc">Click on any project to view architecture & live links</p>
+
+      <div class="cards-grid">
+        <!-- CARD 1 -->
+        <div class="project-card" data-category="web">
+          <div>
+            <div class="card-icon icon-purple">&lt;/&gt;</div>
+            <h3 class="card-title">Enterprise Web & Mobile Ecosystem</h3>
+            <p class="card-text">Full-stack web & mobile solutions with modern UI, responsive design and high performance.</p>
+            <div class="card-tags">
+              <span class="tag">HTML5/CSS3</span><span class="tag">JavaScript</span><span class="tag">Node.js</span>
+            </div>
+          </div>
+          <button class="btn-details" onclick="showModal('tech')">View Details ↗</button>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="project-card" data-category="ai">
+          <div>
+            <div class="card-icon icon-green">📈</div>
+            <h3 class="card-title">Algorithmic Trading & Financial Dashboard</h3>
+            <p class="card-text">Real-time market tracking, analytics dashboards and risk management for smart trading.</p>
+            <div class="card-tags">
+              <span class="tag">Python</span><span class="tag">Chart.js</span><span class="tag">REST API</span>
+            </div>
+          </div>
+          <button class="btn-details" onclick="showModal('finance')">View Details ↗</button>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="project-card" data-category="web">
+          <div>
+            <div class="card-icon icon-orange">💼</div>
+            <h3 class="card-title">Smart Business Automation & ERP System</h3>
+            <p class="card-text">Automate workflows, manage clients, track operations and grow your business efficiently.</p>
+            <div class="card-tags">
+              <span class="tag">Enterprise UI</span><span class="tag">Automation</span>
+            </div>
+          </div>
+          <button class="btn-details" onclick="showModal('business')">View Details ↗</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- INTERACTIVE TERMINAL SECTION -->
+  <div class="terminal-section" id="terminal">
+    <div class="terminal-window">
+      <div class="header-banner terminal-header">
+        <div class="term-btn t-red"></div>
+        <div class="term-btn t-yellow"></div>
+        <div class="term-btn t-green"></div>
+        <span class="terminal-title">bash — deepak@portfolio:~ (Type 'help' for commands)</span>
+      </div>
+      <div class="terminal-body">
+        <div id="termOutput" class="terminal-output">Welcome to Deepak's Interactive Terminal v1.0
+Type 'help' to see available commands.</div>
+        <div class="terminal-input-row">
+          <span class="terminal-prompt">&gt;</span>
+          <input type="text" id="termInput" class="terminal-input" placeholder="Type a command (e.g., skills, contact)..." onkeydown="handleTerminal(event)">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERLAY POPUP MODAL -->
+  <div id="popModal" class="modal-overlay hidden" onclick="handleOutsideClick(event)">
+    <div class="modal-card">
+      <span class="modal-close" onclick="hideModal()">&times;</span>
+      <div class="modal-img-wrapper">
+        <img id="mImg" src="" alt="Project Preview">
+        <div class="modal-badge">&lt;/&gt; Live Project</div>
+      </div>
+      <h2 id="mTitle" class="modal-h2"></h2>
+      <p id="mDesc" class="modal-p"></p>
+      
+      <div class="modal-action-btns">
+        <a href="#" target="_blank" class="btn-modal-demo">Live Demo ↗</a>
+        <a href="#" target="_blank" class="btn-modal-code">GitHub Code 💻</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    const projectDetails = {
+      tech: {
+        title: "Enterprise Web & Mobile Ecosystem",
+        img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600",
+        desc: "A complete full-stack web and mobile solutions suite built for scalability. Uses modular CSS, dark glassmorphism theme, and zero external framework latency for maximum speed.",
+        liveLink: "https://kewa-web-portfolio.netlify.app/",
+        githubLink: "https://github.com/deepak6005678745-eng/My_python_project"
+      },
+      finance: {
+        title: "Algorithmic Trading & Financial Dashboard",
+        img: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600",
+        desc: "Integrated real-time websocket data feeds for instant market analytics and risk calculations, packed in a high-density financial interface.",
+        liveLink: "https://your-trading-demo.com",
+        githubLink: "https://github.com/deepak6005678745-eng/My_python_project"
+      },
+      business: {
+        title: "Smart Business Automation & ERP System",
+        img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600",
+        desc: "Enterprise resource planning platform automating multi-department workflows and custom operational data reporting.",
+        liveLink: "https://your-erp-demo.com",
+        githubLink: "https://github.com/deepak6005678745-eng/My_python_project"
+      }
+    };
+
+    function showModal(key) {
+      const item = projectDetails[key];
+      document.getElementById('mTitle').innerText = item.title;
+      document.getElementById('mImg').src = item.img;
+      document.getElementById('mDesc').innerText = item.desc;
+      
+      document.querySelector('.btn-modal-demo').href = item.liveLink;
+      document.querySelector('.btn-modal-code').href = item.githubLink;
+
+      document.getElementById('popModal').classList.remove('hidden');
+    }
+
+    function hideModal() {
+      document.getElementById('popModal').classList.add('hidden');
+    }
+
+    function handleOutsideClick(event) {
+      const modalOverlay = document.getElementById('popModal');
+      if (event.target === modalOverlay) {
+        hideModal();
+      }
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        hideModal();
+      }
+    });
+
+    function filterProjects(category, btnElement) {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    function handleTerminal(e) {
+      if (e.key === 'Enter') {
+        const input = document.getElementById('termInput');
+        const output = document.getElementById('termOutput');
+        const cmd = input.value.trim().toLowerCase();
+
+        let response = '';
+        if (cmd === 'help') {
+          response = "Available Commands:\n  - skills  : View core technical stack\n  - contact : Get direct contact info\n  - clear   : Clear terminal output";
+        } else if (cmd === 'skills') {
+          response = "Technical Skills:\n  - Frontend : HTML5, CSS3, JS (ES6+), Modern Glass UI\n  - Backend  : Node.js, Python, REST APIs\n  - Tools    : Git, Cloud Deployment, Optimization";
+        } else if (cmd === 'contact') {
+          response = "Contact Info:\n  - Email: contact@kewasoftware.com\n  - Status: Open for freelance & full-time roles";
+        } else if (cmd === 'clear') {
+          output.innerText = "";
+          input.value = '';
+          return;
+        } else if (cmd !== '') {
+          response = `Command not recognized: '${cmd}'. Type 'help' for available commands.`;
+        }
+
+        if (response) {
+          output.innerText += `\n> ${input.value}\n${response}`;
+        }
+        input.value = '';
+        output.scrollTop = output.scrollHeight;
+      }
+    }
+  </script>
+</body>
+</html>
